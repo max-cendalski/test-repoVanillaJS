@@ -1,7 +1,12 @@
+var $button = document.querySelector('.button-to-about')
 
 
 
+$button.addEventListener('click',function() {
+event.preventDefault()
+  console.log('whee')
 
+})
 /*
 var $nutritionList = document.querySelector('#nutrition-list')
 var $sugar= document.querySelector('#sugar')
