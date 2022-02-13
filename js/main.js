@@ -1,12 +1,27 @@
 var $button = document.querySelector('.button-to-about')
+var $homepage = document.querySelector('#homepage')
+var $about = document.querySelector('#about')
 
 
 
 $button.addEventListener('click',function() {
 event.preventDefault()
-  console.log('whee')
+  var divElements = document.querySelectorAll('div')
+
+switchingViews('about')
 
 })
+
+function switchingViews(view) {
+  if (view === 'about') {
+    $about.className = 'column-width100'
+    $homepage.className = 'hidden'
+  } else {
+    $about.className = 'hidden'
+    $homepage.className = 'column-width100'
+  }
+
+}
 /*
 var $nutritionList = document.querySelector('#nutrition-list')
 var $sugar= document.querySelector('#sugar')
