@@ -20,7 +20,7 @@ event.preventDefault()
 switchingViews('home')
 })
 
-
+ //location.hash
 
 function switchingViews(view) {
   if (view === 'about') {
