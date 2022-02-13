@@ -1,16 +1,26 @@
-var $button = document.querySelector('.button-to-about')
+var $buttonToAbout = document.querySelector('.button-to-about')
+var $buttonToHome =document.querySelector('.button-to-home')
 var $homepage = document.querySelector('#homepage')
 var $about = document.querySelector('#about')
 
 
 
-$button.addEventListener('click',function() {
+
+$buttonToAbout.addEventListener('click',function() {
 event.preventDefault()
   var divElements = document.querySelectorAll('div')
-
+  divElements.forEach(element => console.log(element.dataset.view))
 switchingViews('about')
-
 })
+
+$buttonToHome.addEventListener('click',function() {
+event.preventDefault()
+  var divElements = document.querySelectorAll('div')
+  divElements.forEach(element => console.log(element.dataset.view))
+switchingViews('home')
+})
+
+
 
 function switchingViews(view) {
   if (view === 'about') {
