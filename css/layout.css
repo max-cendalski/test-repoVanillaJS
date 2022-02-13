@@ -25,6 +25,11 @@ input, button {
   margin: 10px;
 }
 
+.button:active {
+  transform: scale(1.2)
+}
+
+
 .create {
   width: 100px;
   height: 100px;
