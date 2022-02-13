@@ -14,13 +14,15 @@
   </header>
   <main>
 
-    <div class="container" data-view="homepage">
+    <div class="container">
       <div class="row">
-        <h1>Homepage</h1>
-        <button>Go to About Page</button>
-      </div>
-      <div class="row" data-view="about">
-
+        <div class="column-width100" data-view="homepage">
+          <h1>Homepage</h1>
+          <button class="button-to-about">Go to About Page</button>
+        </div>
+        <div class="column-width100 hidden" data-view="about">
+          <a class="link-to-google" href="www.google.com">Google</a>
+        </div>
       </div>
     </div>
 
