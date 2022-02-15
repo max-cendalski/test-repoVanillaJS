@@ -1,0 +1,45 @@
+.container {
+  max-width: 1920px;
+}
+.row {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+.view {
+  display: flex;
+}
+.column-width100 {
+  width:100%
+}
+
+.column-width50 {
+  width:50%
+}
+.margin-top50{
+  margin-top: 50px;
+}
+.input-box {
+  width: 30px;
+}
+input, button {
+  margin: 10px;
+}
+
+.button:active {
+  transform: scale(1.2)
+}
+
+
+.create {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
