@@ -2,7 +2,7 @@ var $buttonToAbout = document.querySelector('.button-to-about')
 var $buttonToHome =document.querySelector('.button-to-home')
 var $homepage = document.querySelector('#homepage')
 var $about = document.querySelector('#about')
-
+var $views = document.querySelectorAll('.view')
 
 
 window.addEventListener('hashchange',function(event) {
