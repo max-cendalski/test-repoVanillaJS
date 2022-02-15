@@ -5,38 +5,44 @@ var $about = document.querySelector('#about')
 var $views = document.querySelectorAll('.view')
 
 
-window.addEventListener('hashchange',function(event) {
-  console.log($views)
+
+document.addEventListener('DOMContentLoaded',event => {
+  switchingViews('homepage')
 })
+
+
+window.addEventListener('hashchange',function(event) {
+  switchingViews(window.location.hash)
+})
+
+
 
 $buttonToAbout.addEventListener('click',function() {
 event.preventDefault()
-  var divElements = document.querySelectorAll('div')
-  divElements.forEach(element => console.log(element.dataset.view))
 switchingViews('about')
 })
 
 $buttonToHome.addEventListener('click',function() {
 event.preventDefault()
-  var divElements = document.querySelectorAll('div')
-  divElements.forEach(element => console.log(element.dataset.view))
-switchingViews('home')
+ switchingViews('homepage')
 })
 
  //location.hash
 
-function switchingViews(view) {
-  if (view === 'about') {
-    $about.className = 'column-width100'
-    $homepage.className = 'hidden'
-    window.location= '# about'
-  } else {
-    $about.className = 'hidden'
-    $homepage.className = 'column-width100'
-    window.location = '# homepage'
+function switchingViews(newHash) {
+  var route = newHash.startsWith('#') ? newHash.replace('#', '') : newHash;
+  if (route ==='') return
+
+  for (var viewIndex = 0; viewIndex < $views.length; viewIndex++) {
+    if ($views[viewIndex].getAttribute('data-view') !== route) {
+      $views[viewIndex].className = 'view hidden';
+    } else {
+      $views[viewIndex].className = 'view'
+    }
   }
 
 }
+
 /*
 var $nutritionList = document.querySelector('#nutrition-list')
 var $sugar= document.querySelector('#sugar')
