@@ -5,6 +5,9 @@ var $about = document.querySelector('#about')
 
 
 
+window.addEventListener('hashchange',function(event) {
+  console.log($views)
+})
 
 $buttonToAbout.addEventListener('click',function() {
 event.preventDefault()
@@ -26,9 +29,11 @@ function switchingViews(view) {
   if (view === 'about') {
     $about.className = 'column-width100'
     $homepage.className = 'hidden'
+    window.location= '# about'
   } else {
     $about.className = 'hidden'
     $homepage.className = 'column-width100'
+    window.location = '# homepage'
   }
 
 }
