@@ -5,6 +5,7 @@ var $about = document.querySelector('#about')
 var $views = document.querySelectorAll('.view')
 
 switchingViews(window.location.hash)
+console.log(window.location.hash)
 
 window.addEventListener('hashchange',function(event) {
   switchingViews(window.location.hash)
