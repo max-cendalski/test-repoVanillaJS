@@ -4,15 +4,12 @@ var $homepage = document.querySelector('#homepage')
 var $about = document.querySelector('#about')
 var $views = document.querySelectorAll('.view')
 
-
+switchingViews(window.location.hash)
 
 window.addEventListener('hashchange',function(event) {
   switchingViews(window.location.hash)
 })
 
- document.addEventListener('DOMContentLoaded',event => {
-  window.location.hash = 'homepage'
-})
 
 
 $buttonToAbout.addEventListener('click',function() {
