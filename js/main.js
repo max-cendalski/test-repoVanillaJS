@@ -1,10 +1,10 @@
 var $buttonToAbout = document.querySelector('.button-to-about')
-var $buttonToHome =document.querySelector('.button-to-home')
+var $buttonToHomeFromContact =document.querySelector('#button-to-home-from-contact')
 var $buttonToContact = document.querySelector('.button-to-contact')
+var $buttonToHomeFromAbout = document.querySelector('#button-to-home-from-about')
 
 var $views = document.querySelectorAll('.view')
 
-//debugger;
 
 switchingViews(window.location.hash)
 
@@ -15,8 +15,12 @@ window.addEventListener('hashchange',function(event) {
 
 
 
+$buttonToHomeFromAbout.addEventListener('click',function() {
+window.location.hash = 'homepage'
+switchingViews(window.location.hash)
+})
 
-$buttonToHome.addEventListener('click',function() {
+$buttonToHomeFromContact.addEventListener('click',function() {
 window.location.hash = 'homepage'
 switchingViews(window.location.hash)
 })
