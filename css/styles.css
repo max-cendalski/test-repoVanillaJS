@@ -1,6 +1,7 @@
-.hidden {
-  display: none;
-}
 .view {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }

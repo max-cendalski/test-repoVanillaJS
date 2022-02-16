@@ -1,8 +1,10 @@
 var $buttonToAbout = document.querySelector('.button-to-about')
 var $buttonToHome =document.querySelector('.button-to-home')
-var $homepage = document.querySelector('#homepage')
-var $about = document.querySelector('#about')
+//var $homepage = document.querySelector('#homepage')
+//var $about = document.querySelector('#about')
 var $views = document.querySelectorAll('.view')
+
+//debugger;
 
 switchingViews(window.location.hash)
 console.log(window.location.hash)
@@ -13,7 +15,7 @@ window.addEventListener('hashchange',function(event) {
 
 
 
-$buttonToAbout.addEventListener('click',function() {
+ $buttonToAbout.addEventListener('click',function() {
 event.preventDefault()
 window.location.hash = 'about'
 switchingViews(window.location.hash)
@@ -23,20 +25,18 @@ $buttonToHome.addEventListener('click',function() {
 event.preventDefault()
 window.location.hash = 'homepage'
 switchingViews(window.location.hash)
-
 })
 
 
 function switchingViews(newHash) {
-  //debugger;
   var route = newHash.startsWith('#') ? newHash.replace('#', '') : newHash;
   if (route ==='') return
 
   for (var viewIndex = 0; viewIndex < $views.length; viewIndex++) {
     if ($views[viewIndex].getAttribute('data-view') !== route) {
-      $views[viewIndex].className = 'hidden';
+      $views[viewIndex].className = 'view hidden';
     } else {
-      $views[viewIndex].className = 'view hidden'
+      $views[viewIndex].className = 'view'
     }
   }
 }
