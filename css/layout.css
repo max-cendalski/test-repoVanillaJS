@@ -1,16 +1,7 @@
 .container {
   max-width: 1920px;
 }
-.row {
-  display: flex;
-}
 
-.hidden {
-  display: none;
-}
-.view {
-  display: flex;
-}
 .column-width100 {
   width:100%
 }
@@ -28,10 +19,13 @@ input, button {
   margin: 10px;
 }
 
-.button:active {
-  transform: scale(1.2)
+button {
+  width:20%;
+  margin: 10px auto;
 }
-
+.button:active {
+  transform: scale(1.1)
+}
 
 .create {
   width: 100px;
@@ -42,4 +36,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
 }
