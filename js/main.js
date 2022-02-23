@@ -1,4 +1,33 @@
-var $buttonToAbout = document.querySelector('.button-to-about')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HASH ROUTING
+/* var $buttonToAbout = document.querySelector('.button-to-about')
 var $buttonToHomeFromContact =document.querySelector('#button-to-home-from-contact')
 var $buttonToContact = document.querySelector('.button-to-contact')
 var $buttonToHomeFromAbout = document.querySelector('#button-to-home-from-about')
@@ -37,7 +66,6 @@ switchingViews(window.location.hash)
 
 
 function switchingViews(newHash) {
-  //debugger;
   var route = newHash.startsWith('#') ? newHash.replace('#', '') : newHash;
   if (route ==='') return;
   for (var viewIndex = 0; viewIndex < $views.length; viewIndex++) {
@@ -47,7 +75,7 @@ function switchingViews(newHash) {
       $views[viewIndex].className = 'view'
     }
   }
-}
+} */
 
 /*
 var $nutritionList = document.querySelector('#nutrition-list')

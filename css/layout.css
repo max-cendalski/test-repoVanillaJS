@@ -20,7 +20,7 @@ input, button {
 }
 
 button {
-  width:20%;
+  width:60px;
   margin: 10px auto;
 }
 .button:active {
@@ -38,7 +38,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 .navbar {
-  height: 30px;
+  height: 60px;
   width: 100%;
   background-color: aquamarine;
 }
