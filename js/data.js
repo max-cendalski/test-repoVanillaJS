@@ -1,8 +1,9 @@
 /* exported data */
 
 
-var ships = {
-  carrack: {
+var ships = [
+  {
+    name: 'Carrack',
   length: '100',
   height: '20',
   weigth: '2000',
@@ -12,7 +13,8 @@ var ships = {
   },
   armor: '300',
 },
-freelancer: {
+{
+  name: 'Freelancer',
   length: '50',
   height: '10',
   weigth: '1000',
@@ -22,8 +24,8 @@ freelancer: {
   },
   armor: '100',
 },
-
-constelation: {
+{
+  name: 'Constellation',
   length: '80',
   height: '18',
   weigth: '1500',
@@ -33,6 +35,4 @@ constelation: {
   },
   armor: '200',
 }
-
-
-}
+]

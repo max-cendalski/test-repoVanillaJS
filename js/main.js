@@ -1,7 +1,7 @@
 
 
 
-
+console.log(ships[0])
 
 
 
