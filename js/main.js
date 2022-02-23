@@ -1,12 +1,15 @@
-
+$list = document.querySelector('#list')
 $sortDropDown = document.querySelector('#sort-dropdown')
+
 
 $sortDropDown.addEventListener('click',function() {
   console.log('event.target',event.target.value)
 })
 
 
-
+function renderShips(data) {
+  var liElement = document.createElement('li')
+}
 
 
 
