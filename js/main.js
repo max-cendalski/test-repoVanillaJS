@@ -3,30 +3,41 @@ $sortDropDown = document.querySelector('#sort-dropdown')
 $sortForm = document.querySelector('#sort-form')
 $submitButton = document.querySelector('#submit')
 
-var lengthCount = false
+var length = true
+var armor = false
+var weapon = false
+var crew = false
+var weight = false
 
 $sortDropDown.addEventListener('click',function(event) {
   event.preventDefault()
-  if (event.target.value === 'armor') {
-  lengthCount = true
-  console.log(lengthCount)
+  if (event.target.value === 'length') {
+  length = true
+  console.log(length)
   }
 })
 
 $sortForm.addEventListener('submit',function(event) {
   event.preventDefault()
   console.log(event.target.value)
-  if (lengthCount === true ) {
+  if (length === true ) {
     renderShips(ships[1])
+    resetSort()
+  } else {
+    console.log('lenght',length)
   }
-  lengthCount = false
-  console.log(lengthCount)
+  console.log(length)
 })
 
-
+function resetSort() {
+  var length = false
+  var armor = false
+  var weapon = false
+  var crew = false
+  var weight = false
+}
 
 function renderShips(data) {
-  console.log('ship name',data.name)
   var liElement = document.createElement('li')
   liElement.setAttribute('class','border-all column-width50')
   $list.appendChild(liElement)
