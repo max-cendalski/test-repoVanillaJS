@@ -19,7 +19,6 @@ $sortDropDown.addEventListener('click',function(event) {
 
 $sortForm.addEventListener('submit',function(event) {
   event.preventDefault()
-  console.log(event.target.value)
   if (length === true ) {
     renderShips(ships[1])
     resetSort()
