@@ -3,7 +3,7 @@
 
 var ships = [
   {
-    name: 'Carrack',
+  name: 'Carrack',
   length: '100',
   height: '20',
   weigth: '2000',
@@ -34,5 +34,16 @@ var ships = [
     max: 6
   },
   armor: '200',
+},
+{
+  name: 'Eclipse',
+  length: '40',
+  height: '12',
+  weigth: '990',
+  crew: {
+    min: 1,
+    max: 2
+  },
+  armor: '50',
 }
 ]

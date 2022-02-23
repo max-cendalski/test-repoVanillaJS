@@ -1,7 +1,10 @@
 
+$sortDropDown = document.querySelector('#sort-dropdown')
 
+$sortDropDown.addEventListener('click',function() {
+  console.log('event.target',event.target.value)
+})
 
-console.log(ships[0])
 
 
 
