@@ -17,7 +17,7 @@ var ships = [
   name: 'Freelancer',
   length: '50',
   height: '10',
-  weigth: '1000',
+  weight: '1000',
   crew: {
     min: 1,
     max: 4

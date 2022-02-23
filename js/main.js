@@ -1,14 +1,53 @@
 $list = document.querySelector('#list')
 $sortDropDown = document.querySelector('#sort-dropdown')
+$sortForm = document.querySelector('#sort-form')
+$submitButton = document.querySelector('#submit')
 
+var lengthCount = false
 
-$sortDropDown.addEventListener('click',function() {
-  console.log('event.target',event.target.value)
+$sortDropDown.addEventListener('click',function(event) {
+  event.preventDefault()
+  if (event.target.value === 'armor') {
+  lengthCount = true
+  console.log(lengthCount)
+  }
+})
+
+$sortForm.addEventListener('submit',function(event) {
+  event.preventDefault()
+  console.log(event.target.value)
+  if (lengthCount === true ) {
+    renderShips(ships[1])
+  }
+  lengthCount = false
+  console.log(lengthCount)
 })
 
 
+
 function renderShips(data) {
+  console.log('ship name',data.name)
   var liElement = document.createElement('li')
+  liElement.setAttribute('class','border-all column-width50')
+  $list.appendChild(liElement)
+
+  var shipName = document.createElement('h2')
+  shipName.textContent = data.name
+  liElement.appendChild(shipName)
+
+  var shipLength = document.createElement('p')
+  shipLength.textContent = 'length: ' + data.length
+  liElement.appendChild(shipLength)
+
+  var shipheight = document.createElement('p')
+  shipheight.textContent = 'height: ' + data.height
+  liElement.appendChild(shipheight)
+
+  var shipweight = document.createElement('p')
+  shipweight.textContent = 'weight: ' + data.weight
+  liElement.appendChild(shipweight)
+
+  return liElement
 }
 
 

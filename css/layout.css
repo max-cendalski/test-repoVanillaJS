@@ -4,8 +4,16 @@
 
 .row {
   display: flex;
+  flex-direction: column;
 }
 
+ul {
+  list-style: none;
+}
+
+.border-all {
+  border: 1px solid black
+}
 .column-width100 {
   width:100%
 }
