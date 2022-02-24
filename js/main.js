@@ -3,54 +3,75 @@ $sortDropDown = document.querySelector('#sort-dropdown')
 $sortForm = document.querySelector('#sort-form')
 $submitButton = document.querySelector('#submit')
 
-var length = true
-var armor = false
+var length = false
+var armor = true
 var weapon = false
 var crew = false
 var weight = false
 
-$sortDropDown.addEventListener('click',function(event) {
+$sortDropDown.addEventListener('click', function(event) {
   event.preventDefault()
-  if (event.target.value === 'length') {
-    resetSort()
-    length = true
-  if (event.target.value === 'armor') {
-    resetSort()
-    armor = true
-  }
-  if (event.target.value === 'weapon') {
-    resetSort()
-    weapon = true
-  }
-  if (event.target.value === 'crew') {
-    resetSort()
-    crew = true
-  }
-  if (event.target.value === 'weight') {
-    resetSort()
-    weight = true
-  }
-  }
-})
 
-$sortForm.addEventListener('submit',function(event) {
-  event.preventDefault()
-  if (length === true ) {
+
+  if (event.target.value === 'length') {
     ships.sort((a, b) => a.length - b.length)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
+   if (event.target.value === 'armor') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.armor - b.armor)
     for (var i = 0; i < ships.length; i++) {
       renderShips(ships[i])
     }
   }
+  if (event.target.value === 'weapon') {
+    ships.sort((a, b) => a.weapon - b.weapon)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'weight') {
+    ships.sort((a, b) => a.weight - b.weight)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
 })
 
-function resetSort() {
-  var length = false
-  var armor = false
-  var weapon = false
-  var crew = false
-  var weight = false
-}
+/* console.log('afterSortDropdown',length)
+$sortForm.addEventListener('submit',function(event) {
+  event.preventDefault()
+  console.log('length',length)
+  console.log('armor',armor)
+  if (length === true ) {
+    ships.sort((a, b) => a.length - b.length)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (armor === true ) {
+  ships.sort((a, b) => a.armor - b.armor)
+  $list.replaceChildren()
+  for (var i = 0; i < ships.length; i++) {
+    renderShips(ships[i])
+  }
+  }
+}) */
 
+/* function resetSort() {
+  length = false
+  armor = false
+  weapon = false
+  crew = false
+  weight = false
+}
+ */
 function renderShips(data) {
   var liElement = document.createElement('li')
   liElement.setAttribute('class','border-all column-width50')
@@ -61,15 +82,19 @@ function renderShips(data) {
   liElement.appendChild(shipName)
 
   var shipLength = document.createElement('p')
-  shipLength.textContent = 'length: ' + data.length
+  shipLength.textContent = 'Length: ' + data.length
   liElement.appendChild(shipLength)
 
-  var shipheight = document.createElement('p')
-  shipheight.textContent = 'height: ' + data.height
-  liElement.appendChild(shipheight)
+  var shipHeight = document.createElement('p')
+  shipHeight.textContent = 'Height: ' + data.height
+  liElement.appendChild(shipHeight)
+
+  var shipArmor = document.createElement('p')
+  shipArmor.textContent = 'Armor: ' + data.armor
+  liElement.appendChild(shipArmor)
 
   var shipweight = document.createElement('p')
-  shipweight.textContent = 'weight: ' + data.weight
+  shipweight.textContent = 'Weight: ' + data.weight
   liElement.appendChild(shipweight)
 
   return liElement
