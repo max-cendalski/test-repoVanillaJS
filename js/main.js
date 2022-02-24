@@ -3,11 +3,7 @@ $sortDropDown = document.querySelector('#sort-dropdown')
 $sortForm = document.querySelector('#sort-form')
 $submitButton = document.querySelector('#submit')
 
-var length = false
-var armor = true
-var weapon = false
-var crew = false
-var weight = false
+
 
 $sortDropDown.addEventListener('click', function(event) {
   event.preventDefault()
@@ -43,35 +39,7 @@ $sortDropDown.addEventListener('click', function(event) {
    }
 })
 
-/* console.log('afterSortDropdown',length)
-$sortForm.addEventListener('submit',function(event) {
-  event.preventDefault()
-  console.log('length',length)
-  console.log('armor',armor)
-  if (length === true ) {
-    ships.sort((a, b) => a.length - b.length)
-    $list.replaceChildren()
-    for (var i = 0; i < ships.length; i++) {
-      renderShips(ships[i])
-    }
-  }
-  if (armor === true ) {
-  ships.sort((a, b) => a.armor - b.armor)
-  $list.replaceChildren()
-  for (var i = 0; i < ships.length; i++) {
-    renderShips(ships[i])
-  }
-  }
-}) */
 
-/* function resetSort() {
-  length = false
-  armor = false
-  weapon = false
-  crew = false
-  weight = false
-}
- */
 function renderShips(data) {
   var liElement = document.createElement('li')
   liElement.setAttribute('class','border-all column-width50')
