@@ -12,20 +12,35 @@ var weight = false
 $sortDropDown.addEventListener('click',function(event) {
   event.preventDefault()
   if (event.target.value === 'length') {
-  length = true
-  console.log(length)
+    resetSort()
+    length = true
+  if (event.target.value === 'armor') {
+    resetSort()
+    armor = true
+  }
+  if (event.target.value === 'weapon') {
+    resetSort()
+    weapon = true
+  }
+  if (event.target.value === 'crew') {
+    resetSort()
+    crew = true
+  }
+  if (event.target.value === 'weight') {
+    resetSort()
+    weight = true
+  }
   }
 })
 
 $sortForm.addEventListener('submit',function(event) {
   event.preventDefault()
   if (length === true ) {
-    renderShips(ships[1])
-    resetSort()
-  } else {
-    console.log('lenght',length)
+    ships.sort((a, b) => a.length - b.length)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
   }
-  console.log(length)
 })
 
 function resetSort() {
