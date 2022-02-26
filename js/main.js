@@ -30,6 +30,13 @@ $sortDropDown.addEventListener('click', function(event) {
       renderShips(ships[i])
     }
   }
+  if (event.target.value === 'crew') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.crew.min - b.crew.min)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
   if (event.target.value === 'weapon') {
     ships.sort((a, b) => a.weapon - b.weapon)
     $list.replaceChildren()
@@ -68,9 +75,13 @@ function renderShips(data) {
   shipArmor.textContent = 'Armor: ' + data.armor
   liElement.appendChild(shipArmor)
 
-  var shipweight = document.createElement('p')
-  shipweight.textContent = 'Weight: ' + data.weight
-  liElement.appendChild(shipweight)
+  var shipWeight = document.createElement('p')
+  shipWeight.textContent = 'Weight: ' + data.weight
+  liElement.appendChild(shipWeight)
+
+   var shipcrew = document.createElement('p')
+  shipcrew.textContent = 'Min Crew: ' + data.crew.min
+  liElement.appendChild(shipcrew)
 
   return liElement
 }
