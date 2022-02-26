@@ -66,7 +66,7 @@ function renderShips(data) {
   liElement.setAttribute('class','border-all column-width20')
   $list.appendChild(liElement)
 
-  var shipName = document.createElement('h2')
+  var shipName = document.createElement('h3')
   shipName.textContent = data.name
   liElement.appendChild(shipName)
 
@@ -86,11 +86,11 @@ function renderShips(data) {
   shipWeight.textContent = 'Weight: ' + data.weight
   liElement.appendChild(shipWeight)
 
-   var shipCrewMin = document.createElement('p')
+  var shipCrewMin = document.createElement('p')
   shipCrewMin.textContent = 'Min Crew: ' + data.crew.min
   liElement.appendChild(shipCrewMin)
 
-   var shipCrewMax = document.createElement('p')
+  var shipCrewMax = document.createElement('p')
   shipCrewMax.textContent = 'Max Crew: ' + data.crew.max
   liElement.appendChild(shipCrewMax)
   return liElement
