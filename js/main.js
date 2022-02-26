@@ -9,8 +9,15 @@ $sortDropDown.addEventListener('click', function(event) {
   event.preventDefault()
 
 
-  if (event.target.value === 'length') {
+  if (event.target.value === 'length-lowest') {
     ships.sort((a, b) => a.length - b.length)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
+   if (event.target.value === 'length-highest') {
+    ships.sort((a, b) => b.length - a.length)
     $list.replaceChildren()
     for (var i = 0; i < ships.length; i++) {
       renderShips(ships[i])
