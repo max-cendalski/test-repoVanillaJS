@@ -30,9 +30,16 @@ $sortDropDown.addEventListener('click', function(event) {
       renderShips(ships[i])
     }
   }
-  if (event.target.value === 'crew') {
+  if (event.target.value === 'min-crew') {
     $list.replaceChildren()
     ships.sort((a, b) => a.crew.min - b.crew.min)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'max-crew') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.crew.max - b.crew.max)
     for (var i = 0; i < ships.length; i++) {
       renderShips(ships[i])
     }
@@ -79,10 +86,13 @@ function renderShips(data) {
   shipWeight.textContent = 'Weight: ' + data.weight
   liElement.appendChild(shipWeight)
 
-   var shipcrew = document.createElement('p')
-  shipcrew.textContent = 'Min Crew: ' + data.crew.min
-  liElement.appendChild(shipcrew)
+   var shipCrewMin = document.createElement('p')
+  shipCrewMin.textContent = 'Min Crew: ' + data.crew.min
+  liElement.appendChild(shipCrewMin)
 
+   var shipCrewMax = document.createElement('p')
+  shipCrewMax.textContent = 'Max Crew: ' + data.crew.max
+  liElement.appendChild(shipCrewMax)
   return liElement
 }
 
