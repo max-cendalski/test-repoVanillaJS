@@ -48,6 +48,25 @@ var ships = [
     min: 1,
     max: 2
   },
-
+  {
+  name: 'Runner',
+  length: '30',
+  height: '3',
+  weight: '90',
+  armor: '150',
+  crew: {
+    min: 1,
+    max: 2
+  },
+  {
+  name: 'Gladius',
+  length: '12',
+  height: '7',
+  weight: '700',
+  armor: '150',
+  crew: {
+    min: 1,
+    max: 2
+  },
 }
 ]
