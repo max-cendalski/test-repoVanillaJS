@@ -37,20 +37,8 @@ p {
 .margin-top50{
   margin-top: 50px;
 }
-.input-box {
-  width: 30px;
-}
-input, button {
-  margin: 10px;
-}
 
-button {
-  width:60px;
-  margin: 10px auto;
-}
-.button:active {
-  transform: scale(1.1)
-}
+
 
 .create {
   width: 100px;
