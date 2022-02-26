@@ -11,9 +11,8 @@ var ships = [
   crew: {
     min: 3,
     max: 8
+  }
   },
-
-},
 {
   name: 'Freelancer',
   length: '50',
@@ -23,8 +22,7 @@ var ships = [
   crew: {
     min: 1,
     max: 4
-  },
-
+  }
 },
 {
   name: 'Constellation',
@@ -35,8 +33,7 @@ var ships = [
   crew: {
     min: 2,
     max: 6
-  },
-
+  }
 },
 {
   name: 'Eclipse',
@@ -47,16 +44,18 @@ var ships = [
   crew: {
     min: 1,
     max: 2
-  },
+  }
+},
   {
-  name: 'Runner',
-  length: '30',
-  height: '3',
-  weight: '90',
-  armor: '150',
-  crew: {
-    min: 1,
-    max: 2
+    name: 'Runner',
+    length: '30',
+    height: '3',
+    weight: '90',
+    armor: '150',
+    crew: {
+      min: 1,
+      max: 2
+    }
   },
   {
   name: 'Gladius',

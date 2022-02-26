@@ -42,7 +42,7 @@ $sortDropDown.addEventListener('click', function(event) {
 
 function renderShips(data) {
   var liElement = document.createElement('li')
-  liElement.setAttribute('class','border-all column-width50')
+  liElement.setAttribute('class','border-all column-width20')
   $list.appendChild(liElement)
 
   var shipName = document.createElement('h2')
