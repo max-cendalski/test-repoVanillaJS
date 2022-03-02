@@ -2,8 +2,33 @@
   max-width: 1920px;
 }
 
+.row {
+  display: flex;
+}
+
+#list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  margin: 20px;
+}
+
+ h3 {
+   margin: 2px;
+ }
+p {
+  margin: 2px;
+}
+.border-all {
+  border: 1px solid black
+}
 .column-width100 {
   width:100%
+}
+.column-width20 {
+  width: 20%
 }
 
 .column-width50 {
@@ -12,20 +37,8 @@
 .margin-top50{
   margin-top: 50px;
 }
-.input-box {
-  width: 30px;
-}
-input, button {
-  margin: 10px;
-}
 
-button {
-  width:20%;
-  margin: 10px auto;
-}
-.button:active {
-  transform: scale(1.1)
-}
+
 
 .create {
   width: 100px;
@@ -37,9 +50,14 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: aquamarine;
+}
+
 .view {
-  display: flex;
-  flex-direction: column;
+ display: flex;
 }
 
 .hidden {

@@ -15,6 +15,33 @@
   <main>
 
     <div class="container">
+      <div class="navbar">
+        <form id="search-form">
+          <input>
+          <button>Search</button>
+        </form>
+          <label>Compare By</label>
+          <select id="sort-dropdown">
+            <option value="length-lowest">Length from smallest</option>
+            <option value="length-highest">Length from biggest</option>
+            <option value="armor">Armor</option>
+            <option value="min-crew">Min Crew</option>
+            <option value="max-crew">Max Crew</option>
+            <option value="weight">Weight</option>
+          </select>
+
+
+      </div>
+      <div class="list-container">
+        <ul id="list"></ul>
+
+      </div>
+    </div>
+
+
+
+
+<!-- HASH ROUTING
 
         <div class="view" data-view="homepage">
           <h1>Homepage</h1>
@@ -35,12 +62,7 @@
           <a href="https://www.Google.com" class="link-to-google">Google</a>
         </div>
 
-    </div>
-
-
-
-
-    <!-- <div class="container">
+    <div class="container">
       <div class="row margin-top50">
         <div class="column">
           <form id="nutrition-list" class="form column-width100">

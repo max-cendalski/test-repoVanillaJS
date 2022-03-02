@@ -1,4 +1,124 @@
-var $buttonToAbout = document.querySelector('.button-to-about')
+$list = document.querySelector('#list')
+$sortDropDown = document.querySelector('#sort-dropdown')
+$sortForm = document.querySelector('#sort-form')
+$submitButton = document.querySelector('#submit')
+
+
+
+$sortDropDown.addEventListener('click', function(event) {
+  event.preventDefault()
+
+
+  if (event.target.value === 'length-lowest') {
+    ships.sort((a, b) => a.length - b.length)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
+   if (event.target.value === 'length-highest') {
+    ships.sort((a, b) => b.length - a.length)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
+   if (event.target.value === 'armor') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.armor - b.armor)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'min-crew') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.crew.min - b.crew.min)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'max-crew') {
+    $list.replaceChildren()
+    ships.sort((a, b) => a.crew.max - b.crew.max)
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'weapon') {
+    ships.sort((a, b) => a.weapon - b.weapon)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+  }
+  if (event.target.value === 'weight') {
+    ships.sort((a, b) => a.weight - b.weight)
+    $list.replaceChildren()
+    for (var i = 0; i < ships.length; i++) {
+      renderShips(ships[i])
+    }
+   }
+})
+
+
+function renderShips(data) {
+  var liElement = document.createElement('li')
+  liElement.setAttribute('class','border-all column-width20')
+  $list.appendChild(liElement)
+
+  var shipName = document.createElement('h3')
+  shipName.textContent = data.name
+  liElement.appendChild(shipName)
+
+  var shipLength = document.createElement('p')
+  shipLength.textContent = 'Length: ' + data.length
+  liElement.appendChild(shipLength)
+
+  var shipHeight = document.createElement('p')
+  shipHeight.textContent = 'Height: ' + data.height
+  liElement.appendChild(shipHeight)
+
+  var shipArmor = document.createElement('p')
+  shipArmor.textContent = 'Armor: ' + data.armor
+  liElement.appendChild(shipArmor)
+
+  var shipWeight = document.createElement('p')
+  shipWeight.textContent = 'Weight: ' + data.weight
+  liElement.appendChild(shipWeight)
+
+  var shipCrewMin = document.createElement('p')
+  shipCrewMin.textContent = 'Min Crew: ' + data.crew.min
+  liElement.appendChild(shipCrewMin)
+
+  var shipCrewMax = document.createElement('p')
+  shipCrewMax.textContent = 'Max Crew: ' + data.crew.max
+  liElement.appendChild(shipCrewMax)
+  return liElement
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HASH ROUTING
+/* var $buttonToAbout = document.querySelector('.button-to-about')
 var $buttonToHomeFromContact =document.querySelector('#button-to-home-from-contact')
 var $buttonToContact = document.querySelector('.button-to-contact')
 var $buttonToHomeFromAbout = document.querySelector('#button-to-home-from-about')
@@ -37,7 +157,6 @@ switchingViews(window.location.hash)
 
 
 function switchingViews(newHash) {
-  //debugger;
   var route = newHash.startsWith('#') ? newHash.replace('#', '') : newHash;
   if (route ==='') return;
   for (var viewIndex = 0; viewIndex < $views.length; viewIndex++) {
@@ -47,7 +166,7 @@ function switchingViews(newHash) {
       $views[viewIndex].className = 'view'
     }
   }
-}
+} */
 
 /*
 var $nutritionList = document.querySelector('#nutrition-list')
